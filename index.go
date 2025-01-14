@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"strings"
+)
+
 func main() {
 	// komentar kode
 	// menampilkan pesan hello world
@@ -370,5 +376,68 @@ func main() {
 	// 	fmt.Println(key, " \t:", val)
 	// }
 
-	// halaman 68
+	// var list_mahasiswa = make(map[string]string)
+
+	// list_mahasiswa["nama"] = "Yono"
+	// list_mahasiswa["nim"] = "20241112"
+	// list_mahasiswa["nilai"] = "90"
+
+	// delete(list_mahasiswa, "nilai")
+
+	// fmt.Println(list_mahasiswa)
+
+	// var chicken = map[string]int{"januari": 50, "februari": 40, "mei": 90}
+	// var value, isExist = chicken["mei"]
+
+	// if isExist {
+	// 	fmt.Println(value)
+	// } else {
+	// 	fmt.Println("item is not exists")
+	// }
+
+	// var chickens = []map[string]string{
+	// 	{"name": "chicken blue", "gender": "male", "color": "brown"},
+	// 	{"address": "mangga street", "id": "k001"},
+	// 	{"community": "chicken lovers"},
+	// }
+
+	// for _, chicken := range chickens {
+	// 	fmt.Println(chicken)
+	// }
+	// var names = []string{"John", "Wick"}
+	// printMessage("halo", names)
+
+	// rand.Seed(time.Now().Unix())
+	// var randomValue int
+	// randomValue = randomWithRange(2, 10)
+	// fmt.Println("random number:", randomValue)
+	// randomValue = randomWithRange(2, 10)
+	// fmt.Println("random number:", randomValue)
+	// randomValue = randomWithRange(2, 10)
+	// fmt.Println("random number:", randomValue)
+
+	// halaman 75
+
+	divideNumber(10, 2)
+	divideNumber(4, 0)
+	divideNumber(8, -4)
+}
+
+func divideNumber(m, n int) {
+	if n == 0 {
+		fmt.Printf("invalid divider. %d cannot divided by %d\n", m, n)
+		return
+	}
+	var res = m / n
+	fmt.Printf("%d / %d = %d\n", m, n, res)
+}
+
+func randomWithRange(min, max int) int {
+	var value = rand.Int()%(max-min+1) + min
+	return value
+}
+
+func printMessage(message string, arr []string) {
+	var nameString = strings.Join(arr, " ")
+	fmt.Println(message, nameString)
 }
